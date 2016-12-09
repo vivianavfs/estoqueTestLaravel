@@ -16,3 +16,8 @@ Route::get('/', function () {
 });
 
 Route::post('auth/login','\Domain\Auth\Controller@login');
+
+Route::group(['middleware' => 'jwt.auth'], function () {
+	Route::resource('client','\Domain\Client\Controller');
+});
+

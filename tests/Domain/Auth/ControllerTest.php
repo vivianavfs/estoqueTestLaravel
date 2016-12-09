@@ -3,11 +3,9 @@
 namespace Domain\Auth;
 
 use Domain\User\User;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class ControllerTest extends \TestCase
 {
-	use DatabaseMigrations;
 	
 	public function testLogin()
 	{
