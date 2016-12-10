@@ -2,14 +2,15 @@
 
 namespace Domain\Client;
 
-use Illuminate\Http\Request;
+use Domain\Client\Requests\Store;
 
 class Controller extends \Domain\Core\Http\Controller
 {
-	public function store(Request $request)
+	public function store(Store $request)
 	{
+		$data = $request->all();
 		$client = new Client;
-		$client->name = $request->name;
+		$client->fill($data);
 		$client->save();
 		
 		return $client;
